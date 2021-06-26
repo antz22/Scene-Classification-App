@@ -52,4 +52,4 @@ class TrainedModel():
                 fltFinalClassification = fltClassification
                 intFinalClassificationCount = intClassificationCount
         strClass = self.lstClasses[intFinalClassificationCount]
-        print(strClass)
+        return strClass
