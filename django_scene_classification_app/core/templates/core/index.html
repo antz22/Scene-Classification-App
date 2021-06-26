@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello!</title>
+</head>
+<body>
+    <div>
+        <p>Hello! upload an image of a building, forest, glacier, mountain, sea, or street to classify it.</p>
+        <div>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                 {{ form.as_p }}
+                <button type="submit">Upload</button>
+              </form>
+              
+              {% if img_obj %}
+                <h3>Succesfully uploaded : {{img_obj.title}}</h3>
+                <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">
+                <h3>Classified Scene: {{ scene }}</h3>
+              {% endif %}
+        </div>
+    </div>
+</body>
+</html>
