@@ -7,7 +7,7 @@ from keras.models import model_from_json
 import numpy
 import os
 
-class TrainedModel:
+class TrainedModel():
     def __init__(self, strImagePath, image_size, strModelPath, strWeightsPath):
         self.strImagePath = strImagePath
         self.image_size = image_size

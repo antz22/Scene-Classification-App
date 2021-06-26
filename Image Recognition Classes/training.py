@@ -5,7 +5,7 @@ import os
 from datetime import datetime
 import inspect
 
-class RitModel:
+class RitModel():
     def __init__(self, strMainPath, strDataset, image_size, batch_size, intEpochs):
         self.strMainPath = strMainPath
         self.strDataset = strDataset
@@ -113,8 +113,8 @@ class RitModel:
 
         # serialize model to JSON
         model_json = model.to_json()
-        with open(os.path.join(self.strMainPath, "{}_model-{}.json".format(self.strDataset, strTimestamp)), "w") as json_file:
+        with open(os.path.join("C:\\Users\\suchi\\Dropbox (Sandipan.com)\\Creative\\RitiCode\\Scene Classification Project", "{}_model-{}.json".format(self.strDataset, strTimestamp)), "w") as json_file:
             json_file.write(model_json)
         # serialize weights to HDF5
-        model.save_weights(os.path.join(self.strMainPath, "{}_model-{}.h5".format(self.strDataset, strTimestamp)))
+        model.save_weights(os.path.join("C:\\Users\\suchi\\Dropbox (Sandipan.com)\\Creative\\RitiCode\\Scene Classification Project", "{}_model-{}.h5".format(self.strDataset, strTimestamp)))
         print("Saved model to disk")
